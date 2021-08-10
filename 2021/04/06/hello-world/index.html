@@ -22,7 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello World - Hexo</title>
+  <title>C++指针 - Hexo</title>
   
 
   
@@ -441,7 +441,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title">
-        Hello World
+        C++指针
       </h1>
       <div class='new-meta-box'>
         
@@ -476,7 +476,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Hello World" data-path="/2021/04/06/hello-world/">
+      <div id="lc-pv" data-title="C++指针" data-path="/2021/04/06/hello-world/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -494,19 +494,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+  <h3 id="获取变量内存地址"><a href="#获取变量内存地址" class="headerlink" title="获取变量内存地址"></a>获取变量内存地址</h3><p>每一个变量都有一个内存位置，每一个内存位置都定义了可使用连字号（&amp;）运算符访问的地址</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>  var1;</span><br><span class="line">   <span class="keyword">char</span> var2[<span class="number">10</span>];</span><br><span class="line"> </span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;var1 变量的地址： &quot;</span>;</span><br><span class="line">   cout &lt;&lt; &amp;var1 &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;var2 变量的地址： &quot;</span>;</span><br><span class="line">   cout &lt;&lt; &amp;var2 &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var1 变量的地址： <span class="number">0xbfebd5c0</span></span><br><span class="line">var2 变量的地址： <span class="number">0xbfebd5b6</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="指针申明"><a href="#指针申明" class="headerlink" title="指针申明"></a>指针申明</h3><p><strong>指针</strong>是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>    *ip;    <span class="comment">/* 一个整型的指针 */</span></span><br><span class="line"><span class="keyword">double</span> *dp;    <span class="comment">/* 一个 double 型的指针 */</span></span><br><span class="line"><span class="keyword">float</span>  *fp;    <span class="comment">/* 一个浮点型的指针 */</span></span><br><span class="line"><span class="keyword">char</span>   *ch;    <span class="comment">/* 一个字符型的指针 */</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="指针基本操作"><a href="#指针基本操作" class="headerlink" title="指针基本操作"></a>指针基本操作</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>  var = <span class="number">20</span>;   <span class="comment">// 实际变量的声明</span></span><br><span class="line">   <span class="keyword">int</span>  *ip;        <span class="comment">// 指针变量的声明</span></span><br><span class="line"> </span><br><span class="line">   ip = &amp;var;       <span class="comment">// 在指针变量中存储 var 的地址</span></span><br><span class="line"> </span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Value of var variable: &quot;</span>;</span><br><span class="line">   cout &lt;&lt; var &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 输出在指针变量中存储的地址</span></span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Address stored in ip variable: &quot;</span>;</span><br><span class="line">   cout &lt;&lt; ip &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 访问指针中地址的值</span></span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Value of *ip variable: &quot;</span>;</span><br><span class="line">   cout &lt;&lt; *ip &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Value of var variable: <span class="number">20</span></span><br><span class="line">Address stored in ip variable: <span class="number">0xbfc601ac</span></span><br><span class="line">Value of *ip variable: <span class="number">20</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="C-中变量名和变量值"><a href="#C-中变量名和变量值" class="headerlink" title="C++中变量名和变量值"></a>C++中变量名和变量值</h2><p><strong>今天在看到一篇文章的时候，文章说到  c++中 一个变量 由变量名称和变量值组成，变量值的话是存储在存储空间中的 那么我就产生了一个疑问 那么变量名称是不是就相当于一个指针啊，是一个指向存储在存储空间中的变量值的地址？</strong> </p>
+<p><strong>通过查阅相关资料得出以下结论：</strong></p>
+<p>c++对变量名不作存储，在汇编以后不会出现变量名，变量名作用只是用于方便编译器成汇编代码。**</p>
 
   
   
@@ -541,10 +539,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-06T13:55:54+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-10T21:37:29+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年4月6日</p>
+    <p>更新于：2021年8月10日</p>
   </a>
 </div>
 
@@ -563,7 +561,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aorh.github.io/2021/04/06/hello-world/&title=Hello World - Hexo&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aorh.github.io/2021/04/06/hello-world/&title=C++指针 - Hexo&summary="
           
           >
           
@@ -575,7 +573,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aorh.github.io/2021/04/06/hello-world/&title=Hello World - Hexo&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aorh.github.io/2021/04/06/hello-world/&title=C++指针 - Hexo&summary="
           
           >
           
@@ -587,7 +585,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://aorh.github.io/2021/04/06/hello-world/&title=Hello World - Hexo&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://aorh.github.io/2021/04/06/hello-world/&title=C++指针 - Hexo&summary="
           
           >
           
@@ -663,7 +661,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80"><span class="toc-text">获取变量内存地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E7%94%B3%E6%98%8E"><span class="toc-text">指针申明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">指针基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E4%B8%AD%E5%8F%98%E9%87%8F%E5%90%8D%E5%92%8C%E5%8F%98%E9%87%8F%E5%80%BC"><span class="toc-text">C++中变量名和变量值</span></a>
     </div>
   </section>
 
@@ -682,7 +680,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Hello World";
+  pdata.postTitle="C++指针";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
